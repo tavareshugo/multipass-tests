@@ -15,10 +15,11 @@ Dist="jammy"
 #### Dynamic variables ####
 
 # number CPUs (75% used)
+# bash does floor rounding by default
 CPUs=$(($(sysctl -n hw.physicalcpu) * 75 / 100))
 
 # total memory (50% used)
-RAM=$(($(sysctl -n hw.memsize) / 1024 / 1024 * 50 / 100))
+RAM=$(($(sysctl -n hw.memsize) / 1024 / 1024 / 1024 * 50 / 100))
 
 # user's Documents
 MyDocuments="$HOME/Documents"
